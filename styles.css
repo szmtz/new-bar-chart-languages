@@ -9,7 +9,8 @@ h1 {
     font-family: 'Roboto', sans-serif;
     margin-left: 100px;  
     margin-bottom: 0px; 
-    color: #afaeae
+    color: #afaeae; 
+    font-weight: lighter;
 }
 
 .chart-container {
