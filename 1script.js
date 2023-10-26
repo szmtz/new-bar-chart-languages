@@ -10,7 +10,7 @@ const data = [
     { language: 'Arabic', value: 14 }
 ];
 
-const margin = { top: 20, right: 20, bottom: 20, left: 100 };
+const margin = { top: 20, right: 20, bottom: 20, left: 20 };
 const width = 600 - margin.left - margin.right;
 const height = 400 - margin.top - margin.bottom;
 
@@ -30,16 +30,6 @@ const x = d3.scaleLinear()
     .domain([0, d3.max(data, d => d.value)])
     .nice()
     .range([0, width]);
-
-// Add language labels next to the bars
-svg.selectAll('.label')
-    .data(data)
-    .enter().append('text')
-    .attr('class', 'label')
-    .attr('x', d => x(d.value) + 5)
-    .attr('y', d => y(d.language) + y.bandwidth() / 2)
-    .text(d => d.language)
-    .attr('dy', '0.35em');
 
 svg.selectAll('.bar')
     .data(data)
